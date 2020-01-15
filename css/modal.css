@@ -1,0 +1,123 @@
+.toggleModal{
+	padding: 10px 20px;
+	color: white;
+	background: #409EFF;
+	border:none;
+	box-shadow: 2px 3px 20px rgba(0,0,0,0.2);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.modal{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 800px;
+	transform: translate(-50%,-50%);
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 2px 3px 20px rgba(0,0,0,0.2);
+	z-index: 120;
+	display: none;
+}
+.modal .modal-header{
+	
+	height: 40px;
+	border-bottom: 1px solid #f5f5f5;
+	padding: 0 15px;
+}
+.modal .modal-header p {
+	line-height: 50px;
+	display: inline-block;
+}
+.modal ul{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+.modal ul li{
+	margin: 8px;
+	width: 150px;
+	height: 150px;
+	text-align: center;
+	flex: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.modal  ul li button{
+	display:none;
+}
+.modal .modal-image{
+	padding: 5px;
+	cursor:pointer;
+	width: 100%;
+	box-shadow: #dee1e8 0px 0px 6px 0px;
+	height: 150px;
+	transition: 0.3s all ease;
+}
+.modal li:hover .modal-image{
+	width: 88%;
+	height: 88%;
+}
+.modal .modal-header .title{	
+	font-size: 18px;
+	color: #333;
+}
+.modal .modal-header .close{
+	float: right;
+	font-size: 26px;
+	margin-top: -2px;
+	color: #9C9FA4;
+	cursor: default;
+}
+.modal .modal-content{
+	padding: 20px;
+	min-height: 100px;
+	max-height: 500px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	line-height: 30px;
+}
+.img-insert{
+	background: #0da000;
+}
+.img-insert:hover{
+	background:#096900;
+}
+.modal-content .btn,.modal-footer .btn{
+	padding: 0 20px;
+	height: 36px;
+	line-height: 36px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+	transition: 0.3s all ease;
+}
+.modal-footer .load{
+	background: #409EFF;
+}
+.modal-footer .load:hover{
+	background: #1f70c3;
+}
+.modal-footer .close{
+	background: #6d6d6d;
+}
+.modal-footer .close:hover{
+	background: #4a4a4a;
+}
+
+.modal .modal-footer{
+	border-top: 1px solid #f5f5f5;
+	padding: 15px;
+	text-align: right;
+
+}
+.container::after{
+	content:"";
+	display: block;
+	clear: both;
+}
