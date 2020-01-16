@@ -8,6 +8,6 @@ Version: 4.0
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 自定义小工具CSS样式部分
 */
-.file{position:relative;display:inline-block;background:#D0EEFF;border:1px solid #99D3F5;border-radius:4px;padding:4px 12px;overflow:hidden;color:#1E88C7;text-decoration:none;text-indent:0;line-height:20px}
+.file{position:relative;display:inline-block;background: #f3f5f6;border: 1px solid #0071a1;border-radius:4px;padding:4px 12px;overflow:hidden;color: #0071a1 !important;text-decoration:none;text-indent:0;line-height:20px;}
 .file input{position:absolute;font-size:100px;right:0;top:0;opacity:0}
-.file:hover{background:#AADFFD;border-color:#78C3F3;color:#004974;text-decoration:none}
+.file:hover{background: #f3f5f6;border-color: #0071a1;color:#004974;text-decoration:none;}

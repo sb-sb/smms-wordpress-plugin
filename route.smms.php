@@ -60,19 +60,14 @@ function smms_forward_callback($request){
 }
 
 function smms_getlist_callback($request){
-    $pages = $request->get_param('pages');
-    //if(!current_user_can('level_10')) return;
-    // if ( !is_user_logged_in() ) {
-    //     wp_die('非法操作！');
-    // }
+
     global $wpdb;
 
-    //$result = $wpdb->get_results('SELECT `url` FROM `'. MY_NEW_TABLE .'` ORDER BY `id` DESC LIMIT 50');
+    $pages = $request->get_param('pages');
     $pages = $pages? : 1;
     $limit = 10;
     $offset = ($pages - 1) * 10;
     $sql = $wpdb->prepare('SELECT `url` FROM `'. MY_NEW_TABLE .'` ORDER BY `id` DESC LIMIT %d OFFSET %d', $limit, $offset);
-
     $result = $wpdb->get_results($sql);
 
     return $result;

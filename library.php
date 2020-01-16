@@ -2,8 +2,6 @@
 
 global $wpdb;
 
-//$result = $wpdb->get_results('SELECT `url` FROM `'. MY_NEW_TABLE .'` ORDER BY `id` DESC LIMIT 50');
-
 if(@$_POST['action'] == 'delete' || @$_POST['action2'] == 'delete'){
 	$option = get_option('SMMS_DATA');
     $auth = $option['Authorization'];
