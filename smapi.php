@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * SMAPI by MrJun
  */
