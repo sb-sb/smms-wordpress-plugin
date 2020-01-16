@@ -35,7 +35,7 @@ function my_plugin_options() {
           wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
      }
 	 echo '<div class="wrap">';
-     echo '<h2>SMMS-UPLOADER 插件设置</h2>';
+     echo '<h2>插件设置</h2>';
 	 echo '<p>&nbsp;&nbsp;smms-image是一款为WordPress添加上传图片小工具以及评论处图片上传按钮的插件！</p>';
      echo '<form method = "post">';
      echo '<table class = "form-table">';
