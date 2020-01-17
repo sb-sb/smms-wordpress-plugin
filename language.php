@@ -1,4 +1,4 @@
-<?
+<?php
 $language_cn = [
 	"SMMS 图床",
 	"图片库",
