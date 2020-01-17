@@ -13,6 +13,8 @@ define( 'SMMS_URL', plugin_dir_url( __FILE__ ) );
 define( 'SMMS_VERSION', "4.3");
 define('MY_PLUGIN_MINIMUM_WP_VERSION', '4.0');
 
+//设置语言
+include 'language.php';
 include 'smms.function.php';
 include 'setting.php';
 include 'class.smms.php';

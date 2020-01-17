@@ -41,10 +41,11 @@ class Smms
 
 	function SMMS_UPLOADER_LINKS( $actions, $plugin_file , $plugin_data){
 	    static $plugin;
+	    global $language;
 		if (!isset($plugin))
 			$plugin = plugin_basename(__FILE__);
 		//if ($plugin == $plugin_file) {
-				$settings	= array('settings' => '<a href="admin.php?page=smms-image">插件设置</a>');
+				$settings	= array('settings' => '<a href="admin.php?page=smms-image">'.$language[4].'</a>');
 				$actions 	= array_merge($settings, $actions);
 		//}
 		return $actions;
@@ -65,10 +66,12 @@ class Smms
 	//设置菜单
 
 	function comment_upload_img() {
-		echo '<div class="zz-add-img"><input id="zz-img-file" type="file" accept="image/*" multiple="multiple"><div id="zz-img-add">上传图片</div><div id="zz-img-show"></div></div>';
+		global $language;
+		echo '<div class="zz-add-img"><input id="zz-img-file" type="file" accept="image/*" multiple="multiple"><div id="zz-img-add">'.$language[31].'</div><div id="zz-img-show"></div></div>';
 	}
 	function admin_upload_img() {
-	    echo '<a class="button"  id="toggleModal" title="SMMS图床">SMMS图床</a><a href="javascript:;" class="file">添加图片<input id="admin-img-file" type="file" accept="image/*" multiple="multiple"></a><div class="modal">
+		global $language;
+	    echo '<a class="button"  id="toggleModal" title="'.$language[0].'">'.$language[0].'</a><a href="javascript:;" class="file">'.$language[30].'<input id="admin-img-file" type="file" accept="image/*" multiple="multiple"></a><div class="modal">
 				<div class="modal-header">
 					<p class="close">×</p>
 				</div>
@@ -79,8 +82,8 @@ class Smms
 				</div>
 				
 				<div class="modal-footer">
-					<input id="upload-btn" type="button" class="load btn" value="加载更多">
-					<input type="button" class="close btn" value="关闭">
+					<input id="upload-btn" type="button" class="load btn" value="'.$language[32].'">
+					<input type="button" class="close btn" value="'.$language[33].'">
 				</div>
 			</div><div class="mask"></div>';
 	}

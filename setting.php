@@ -1,18 +1,20 @@
 <?php
-
+include 'language.php';
 add_action( 'admin_menu', 'my_plugin_menu' );
 
 
 function my_plugin_menu() {
-    add_menu_page( 'SMMS图床', 'SMMS图床', 'manage_options', 'smms-image-library', 'my_plugin_library' );
-    add_submenu_page( 'smms-image-library', '图片库', '图片库', 'manage_options', 'smms-image-library', 'my_plugin_library' );
-    add_submenu_page( 'smms-image-library', '设置', '设置', 'manage_options', 'smms-image', 'my_plugin_options' );
+	global $language;
+    add_menu_page( $language[0], $language[0], 'manage_options', 'smms-image-library', 'my_plugin_library' );
+    add_submenu_page( 'smms-image-library', $language[1], $language[1], 'manage_options', 'smms-image-library', 'my_plugin_library' );
+    add_submenu_page( 'smms-image-library', $language[2], $language[2], 'manage_options', 'smms-image', 'my_plugin_options' );
 }
 
 function my_plugin_library(){
 	@require_once( 'library.php' );
 }
 function my_plugin_options() {
+	global $language;
 	if(isset($_POST['DataSubmit']))
 	{
 		$Uploader = array( 
@@ -22,7 +24,7 @@ function my_plugin_options() {
 			'Nolocal' => trim(@$_POST['no_local'])
 		);
 		@update_option('SMMS_DATA', $Uploader);
-		echo '<div class="updated" id="message"><p>提交成功</p></div>';
+		echo '<div class="updated" id="message"><p>'.$language[3].'</p></div>';
 	}
 
 	$Uploader = get_option('SMMS_DATA'); 
@@ -34,38 +36,39 @@ function my_plugin_options() {
      if ( !current_user_can( 'manage_options' ) )  {
           wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
      }
+    echo get_option('WPLANG'); 
 	 echo '<div class="wrap">';
-     echo '<h2>插件设置</h2>';
-	 echo '<p>&nbsp;&nbsp;smms-image是一款为WordPress添加上传图片小工具以及评论处图片上传按钮的插件！</p>';
+     echo '<h2>'.$language[4].'</h2>';
+	 echo '<p>&nbsp;&nbsp;'.$language[5].'</p>';
      echo '<form method = "post">';
      echo '<table class = "form-table">';
      echo '<tbody>';
 
      echo '<tr valign="top">';
-     echo '<th scope="row">Authorization设置</th>';
-     echo '<td><label><input value = "'.$Authorization.'" type = "text" name = "authorization" size="40">  <a target="_blank" href="https://sm.ms/home/apitoken">点击我获取</a></label></td>';
+     echo '<th scope="row">Authorization'.$language[2].'</th>';
+     echo '<td><label><input value = "'.$Authorization.'" type = "text" name = "authorization" size="40">  <a target="_blank" href="https://sm.ms/home/apitoken">'.$language[6].'</a></label></td>';
 	 echo '</tr>';
 	 
 	 echo '<tr valign="top">';
-     echo '<th scope="row">后台文章编辑启用图片上传</th>';
-     echo '<td><label><input value = "true" type = "checkbox" name = "content" '.$Content.'>  勾选后在后台文章编辑处自动添加图片上传按钮</label></td>';
+     echo '<th scope="row">'.$language[7].'</th>';
+     echo '<td><label><input value = "true" type = "checkbox" name = "content" '.$Content.'>  '.$language[8].'</label></td>';
 	 echo '</tr>';
 
 	 
 	 echo '<tr valign="top">';
-	 echo '<th scope="row">是否启用评论上传按钮</th>';
-     echo '<td><label><input value = "true" type = "checkbox" name = "comment" '.$Comment.'>  勾选后在评论框后自动添加图片上传按钮</label></td>'; 
+	 echo '<th scope="row">'.$language[9].'</th>';
+     echo '<td><label><input value = "true" type = "checkbox" name = "comment" '.$Comment.'>  '.$language[10].'</label></td>'; 
 	 echo '</tr>';
 
 	 echo '<tr valign="top">';
-	 echo '<th scope="row">删除本地文件</th>';
-     echo '<td><label><input value = "true" type = "checkbox" name = "no_local" '.$Nolocal.'>  勾选后不保留本地上传文件</label></td>'; 
+	 echo '<th scope="row">'.$language[11].'</th>';
+     echo '<td><label><input value = "true" type = "checkbox" name = "no_local" '.$Nolocal.'>  '.$language[12].'</label></td>'; 
 	 echo '</tr>';
 	 
 	 echo '</tbody>';
 	 echo '</table>'; 
 	 echo '<p class = "submit">'; 
-	 echo '<input class = "button button-primary" type = "submit" name = "DataSubmit" id = "submit" value = "保存更改" />&nbsp;&nbsp;&nbsp;&nbsp;'; 
+	 echo '<input class = "button button-primary" type = "submit" name = "DataSubmit" id = "submit" value = "'.$language[13].'" />&nbsp;&nbsp;&nbsp;&nbsp;'; 
 	 echo '</p>'; 
 	 
 	 echo '</table>'; 
