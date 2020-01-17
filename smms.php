@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: SM.MS图床外链
+Plugin Name: SM.MS 图床外链
 Plugin URI: https://sm.ms
-Description: SM.MS图床外链wordpress插件。
+Description: SM.MS 图床的外链 Wordpress 插件，可以在文章和评论中直接上传图片到 SM.MS 图床并添加对应外链。
 Author: sm.ms
 Author URI: https://sm.ms/
 Version: 1.0

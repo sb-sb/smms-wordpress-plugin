@@ -3,7 +3,7 @@ SM.MS WordPress Plugin
 
 # 插件简介
 
-SM.MS图床插件基于官方API2.0，部分功能参考自 https://github.com/qcgzxw/SMMS-UPLOADER
+SM.MS 图床插件基于官方 API2.0，部分功能参考自 https://github.com/qcgzxw/SMMS-UPLOADER
 
 # 插件预览
 
