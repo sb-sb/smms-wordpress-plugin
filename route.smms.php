@@ -44,16 +44,22 @@ function smms_forward_callback($request){
 
     $result = $smapi->Upload($path);
     
-    $data['width']  = $result['data']['width'];
-    $data['height'] = $result['data']['height'];
-    $data['size']   = $result['data']['size'];
-    $data['hash']   = $result['data']['hash'];
-    $data['url']    = $result['data']['url'];
+    if($result["success"]){
 
-    $wpdb->insert(MY_NEW_TABLE, $data);
+        $data['width']  = $result['data']['width'];
+        $data['height'] = $result['data']['height'];
+        $data['size']   = $result['data']['size'];
+        $data['hash']   = $result['data']['hash'];
+        $data['url']    = $result['data']['url'];
 
-    if($option['Nolocal']){
-        unlink($path);
+        $wpdb->insert(MY_NEW_TABLE, $data);
+
+        if($option['Nolocal']){
+            unlink($path);
+        }
+        
+    }elseif($result["code"] == "image_repeated"){
+        $result['data']['url'] = $result["images"];
     }
 
     return $result;
