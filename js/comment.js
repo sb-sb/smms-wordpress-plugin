@@ -15,7 +15,7 @@ $('#zz-img-file').change(function() {
 			success: function(res) {
                 console.log(res);
 				$("#zz-img-add").text('上传图片');
-				$('#zz-img-show').append('<img src="' + res.data.url + '" />');
+				$('#zz-img-show').append('<img style="max-width:230px;width:100%" src="' + res.data.url + '" />');
 				//$('textarea[name="comment"]').val($('textarea[name="comment"]').val() + '<img src="' + res.data.url + '" />').focus(); 
 				$('textarea[name="comment"]').insertAtCaret('<img src="' + res.data.url + '" />');  
 			}
