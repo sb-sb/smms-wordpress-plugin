@@ -64,20 +64,19 @@ $all_pages = (int) ($count/10) + 1;
 		<table class="wp-list-table widefat fixed striped users">
 			<thead>
 				<tr>
-					<td id='cb' class='manage-column column-cb check-column'><label class="screen-reader-text"
-							for="cb-select-all-1">
+					<td id='cb' class='manage-column column-cb check-column'><label class="screen-reader-text" for="cb-select-all-1">
 							<?php echo $language[22]; ?></label><input
 							id="cb-select-all-1" type="checkbox" /></td>
-					<th scope="col" id='username' class='manage-column column-username column-primary sortable desc'>
-						<a><span>
-								<?php echo $language[24]; ?></span></a></th>
-					<th scope="col" id='name' class='manage-column column-name'>
+					<th scope="col" class='manage-column column-primary sortable desc'>
+						<span><?php echo $language[24]; ?></span>
+					</th>
+					<th scope="col" class='manage-column column-parent'>
 						<?php echo $language[23]; ?>
 					</th>
-					<th scope="col" id='email' class='manage-column column-email sortable desc'><a><span>
-								<?php echo $language[25]; ?></span></a></th>
-					<th scope="col" id='role' class='manage-column column-role'>URL</th>
-					<th scope="col" id='posts' class='manage-column column-posts num'>HASH</th>
+					<th scope="col" class='manage-column sortable desc'><span>
+								<?php echo $language[25]; ?></span></th>
+					<th scope="col" class='manage-column'>URL</th>
+					<th scope="col" class='manage-column'>HASH</th>
 				</tr>
 			</thead>
 
@@ -92,7 +91,7 @@ $all_pages = (int) ($count/10) + 1;
 							class='avatar avatar-32 photo' height='100' width='100' /> </td>
 					<td><?php echo $res->width; ?> * <?php echo $res->height; ?>
 					</td>
-					<td><?php $size = $res->size;	echo $size > 1000000 ? $size / 1000000 . 'mb' : $size / 1000 . 'kb'; ?>
+					<td><?php $size = $res->size;	echo $size > 1048576 ? $size / 1048576 . 'mb' : $size / 1024 . 'kb'; ?>
 					</td>
 					<td><?php echo $res->url; ?>
 					</td>
@@ -104,19 +103,19 @@ $all_pages = (int) ($count/10) + 1;
 
 			<tfoot>
 				<tr>
-					<td class='manage-column column-cb check-column'><label class="screen-reader-text"
-							for="cb-select-all-2">
+					<td id='cb' class='manage-column column-cb check-column'><label class="screen-reader-text" for="cb-select-all-1">
 							<?php echo $language[22]; ?></label><input
-							id="cb-select-all-2" type="checkbox" /></td>
-					<th scope="col" class='manage-column column-username column-primary sortable desc'><a><span>
-								<?php echo $language[24]; ?></span></a></th>
-					<th scope="col" class='manage-column column-name'>
+							id="cb-select-all-1" type="checkbox" /></td>
+					<th scope="col" class='manage-column column-primary sortable desc'>
+						<span><?php echo $language[24]; ?></span>
+					</th>
+					<th scope="col" class='manage-column column-parent'>
 						<?php echo $language[23]; ?>
 					</th>
-					<th scope="col" class='manage-column column-email sortable desc'><a><span>
-								<?php echo $language[25]; ?></span></a></th>
-					<th scope="col" class='manage-column column-role'>URL</th>
-					<th scope="col" class='manage-column column-posts num'>HASH</th>
+					<th scope="col" class='manage-column sortable desc'><span>
+								<?php echo $language[25]; ?></span></th>
+					<th scope="col" class='manage-column'>URL</th>
+					<th scope="col" class='manage-column'>HASH</th>
 				</tr>
 			</tfoot>
 
