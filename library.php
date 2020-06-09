@@ -2,7 +2,7 @@
 include 'language.php';
 global $wpdb;
 global $language;
-if(@$_POST['action'] == 'delete' || @$_POST['action2'] == 'delete'){
+if (@$_POST['action'] == 'delete' || @$_POST['action2'] == 'delete') {
 	$option = get_option('SMMS_DATA');
 	$auth = $option['Authorization'];
 	$smapi = new SMApi($auth);
@@ -27,61 +27,62 @@ $all_pages = (int) ($count/10) + 1;
 
 <div class="wrap">
 	<h1 class="wp-heading-inline">
-		<? echo $language[1]; ?>
+		<?php echo $language[1]; ?>
 	</h1>
-	<?php if(@$_POST['action'] == 'delete' || @$_POST['action2'] == 'delete'){ ?>
+	<?php if (@$_POST['action'] == 'delete' || @$_POST['action2'] == 'delete') { ?>
 	<div id="message" class="updated notice is-dismissible">
 		<p>
-			<? echo $language[14]; ?>
+			<?php echo $language[14]; ?>
 		</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">
-				<? echo $language[15]; ?></span></button>
+				<?php echo $language[15]; ?></span></button>
 	</div>
 	<?php } ?>
 	<form method="post">
 		<div class="tablenav top">
 
 			<div class="alignleft actions bulkactions">
-				<label for="bulk-action-selector-top" class="screen-reader-text">
-					<? echo $language[16]; ?></label><select name="action" id="bulk-action-selector-top">
+				<label for="bulk-action-selector-top" class="screen-reader-text"><?php echo $language[16]; ?></label>
+				<select name="action" id="bulk-action-selector-top">
 					<option value="-1">
-						<? echo $language[17]; ?>
+						<?php echo $language[17]; ?>
 					</option>
 					<option value="delete">
-						<? echo $language[18]; ?>
+						<?php echo $language[18]; ?>
 					</option>
 				</select>
 				<input type="submit" id="doaction" name="test" class="button action"
-					value="<? echo $language[19]; ?>" />
+					value="<?php echo $language[19]; ?>" />
 			</div>
 
 			<div class='tablenav-pages one-page'><span class="displaying-num"><?php echo $count;?>
-					<? echo $language[20]; ?></span></div>
+					<?php echo $language[20]; ?></span></div>
 			<br class="clear" />
 		</div>
 		<h2 class='screen-reader-text'>
-			<? echo $language[21]; ?>
+			<?php echo $language[21]; ?>
 		</h2>
 		<table class="wp-list-table widefat fixed striped users">
 			<thead>
 				<tr>
 					<td id='cb' class='manage-column column-cb check-column'><label class="screen-reader-text"
 							for="cb-select-all-1">
-							<? echo $language[22]; ?></label><input id="cb-select-all-1" type="checkbox" /></td>
+							<?php echo $language[22]; ?></label><input
+							id="cb-select-all-1" type="checkbox" /></td>
 					<th scope="col" id='username' class='manage-column column-username column-primary sortable desc'>
 						<a><span>
-								<? echo $language[24]; ?></span></a></th>
+								<?php echo $language[24]; ?></span></a></th>
 					<th scope="col" id='name' class='manage-column column-name'>
-						<? echo $language[23]; ?>
+						<?php echo $language[23]; ?>
 					</th>
 					<th scope="col" id='email' class='manage-column column-email sortable desc'><a><span>
-								<? echo $language[25]; ?></span></a></th>
+								<?php echo $language[25]; ?></span></a></th>
 					<th scope="col" id='role' class='manage-column column-role'>URL</th>
 					<th scope="col" id='posts' class='manage-column column-posts num'>HASH</th>
 				</tr>
 			</thead>
 
 			<tbody id="the-list" data-wp-lists='list:user'>
-				<?php foreach($rs as $res){ ?>
+				<?php foreach ($rs as $res) { ?>
 				<tr>
 					<th scope='row' class='check-column'><input type="checkbox" name="imglist[]" id="user_1"
 							class="administrator"
@@ -98,21 +99,22 @@ $all_pages = (int) ($count/10) + 1;
 					<td><?php echo $res->hash; ?>
 					</td>
 				</tr>
-				<? } ?>
+				<?php } ?>
 			</tbody>
 
 			<tfoot>
 				<tr>
 					<td class='manage-column column-cb check-column'><label class="screen-reader-text"
 							for="cb-select-all-2">
-							<? echo $language[22]; ?></label><input id="cb-select-all-2" type="checkbox" /></td>
+							<?php echo $language[22]; ?></label><input
+							id="cb-select-all-2" type="checkbox" /></td>
 					<th scope="col" class='manage-column column-username column-primary sortable desc'><a><span>
-								<? echo $language[24]; ?></span></a></th>
+								<?php echo $language[24]; ?></span></a></th>
 					<th scope="col" class='manage-column column-name'>
-						<? echo $language[23]; ?>
+						<?php echo $language[23]; ?>
 					</th>
 					<th scope="col" class='manage-column column-email sortable desc'><a><span>
-								<? echo $language[25]; ?></span></a></th>
+								<?php echo $language[25]; ?></span></a></th>
 					<th scope="col" class='manage-column column-role'>URL</th>
 					<th scope="col" class='manage-column column-posts num'>HASH</th>
 				</tr>
@@ -123,32 +125,35 @@ $all_pages = (int) ($count/10) + 1;
 
 			<div class="alignleft actions bulkactions">
 				<label for="bulk-action-selector-bottom" class="screen-reader-text">
-					<? echo $language[16]; ?></label><select name="action2" id="bulk-action-selector-bottom">
+					<?php echo $language[16]; ?></label><select
+					name="action2" id="bulk-action-selector-bottom">
 					<option value="-1">
-						<? echo $language[17]; ?>
+						<?php echo $language[17]; ?>
 					</option>
 					<option value="delete">
-						<? echo $language[18]; ?>
+						<?php echo $language[18]; ?>
 					</option>
 				</select>
-				<input type="submit" id="doaction2" class="button action" value="<? echo $language[19]; ?>" />
+				<input type="submit" id="doaction2" class="button action"
+					value="<?php echo $language[19]; ?>" />
 			</div>
 
 			<div class="tablenav-pages"><span class="displaying-num"><?php echo $count;?>
-					<? echo $language[20]; ?></span>
-				<a <?php if($pages != 1){ ?>href="admin.php?page=smms-image-library&paged=<?php echo ($pages - 1);?>"<?php }?>>
+					<?php echo $language[20]; ?></span>
+				<a <?php if ($pages != 1) { ?>href="admin.php?page=smms-image-library&paged=<?php echo($pages - 1);?>"<?php }?>>
 					<span
-						class="tablenav-pages-navspan button <?php if($pages == 1){ ?>disabled<?php }?>"
+						class="tablenav-pages-navspan button <?php if ($pages == 1) { ?>disabled<?php }?>"
 						aria-hidden="true">‹</span></a>
 				<span class="screen-reader-text">
-					<? echo $language[26]; ?></span><span id="table-paging" class="paging-input"><span
-						class="tablenav-paging-text">
-						<? echo $language[27]; ?><?php echo $pages;?>
-						<? echo $language[28]; ?>，
-						<? echo $language[29]; ?><span class="total-pages"><?php echo $all_pages;?></span>
-						<? echo $language[28]; ?></span></span>
-				<a class="next-page button <?php if($pages == $all_pages){ ?>disabled<?php }?>"
-					<?php if($pages != $all_pages){ ?>href="admin.php?page=smms-image-library&paged=<?php echo ($pages + 1);?>"<?php }?>><span aria-hidden="true">›</span></a></span>
+					<?php echo $language[26]; ?></span><span
+					id="table-paging" class="paging-input"><span class="tablenav-paging-text">
+						<?php echo $language[27]; ?><?php echo $pages;?>
+						<?php echo $language[28]; ?>，
+						<?php echo $language[29]; ?><span
+							class="total-pages"><?php echo $all_pages;?></span>
+						<?php echo $language[28]; ?></span></span>
+				<a class="next-page button <?php if ($pages == $all_pages) { ?>disabled<?php }?>"
+					<?php if ($pages != $all_pages) { ?>href="admin.php?page=smms-image-library&paged=<?php echo($pages + 1);?>"<?php }?>><span aria-hidden="true">›</span></a></span>
 			</div>
 
 			<br class="clear" />
