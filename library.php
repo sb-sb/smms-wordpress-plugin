@@ -91,7 +91,7 @@ $all_pages = (int) ($count/10) + 1;
 							class='avatar avatar-32 photo' height='100' width='100' /> </td>
 					<td><?php echo $res->width; ?> * <?php echo $res->height; ?>
 					</td>
-					<td><?php echo $res->size; ?>
+					<td><?php $size = $res->size;	echo $size > 1000000 ? $size / 1000000 . 'mb' : $size / 1000 . 'kb'; ?>
 					</td>
 					<td><?php echo $res->url; ?>
 					</td>
