@@ -9,8 +9,8 @@ Version: 1.0
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 自定义小工具CSS样式部分
 */
-define( 'SMMS_URL', plugin_dir_url( __FILE__ ) ); 
-define( 'SMMS_VERSION', "4.3");
+define('SMMS_URL', plugin_dir_url( __FILE__ )); 
+define('SMMS_VERSION', "4.3");
 define('MY_PLUGIN_MINIMUM_WP_VERSION', '4.0');
 
 //设置语言
