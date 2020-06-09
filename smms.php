@@ -5,7 +5,7 @@ Plugin URI: https://sm.ms
 Description: SM.MS 图床的外链 Wordpress 插件，可以在文章和评论中直接上传图片到 SM.MS 图床并添加对应外链。
 Author: sm.ms
 Author URI: https://sm.ms/
-Version: 1.0
+Version: 1.2.3
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 自定义小工具CSS样式部分
 */
