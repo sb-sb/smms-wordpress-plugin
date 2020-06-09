@@ -64,7 +64,8 @@ class Smms
 			$Uploader = array(//设置默认数据
 				'Content' => '',
 				'Comment' => '',
-				'Authorization' => ''
+				'Authorization' => '',
+				'Nolocal' => ''
 			);
 			update_option('SMMS_DATA', $Uploader);//更新选项
 		}
