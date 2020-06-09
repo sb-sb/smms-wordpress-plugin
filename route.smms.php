@@ -4,14 +4,16 @@
 add_action('rest_api_init', 'smms_forward_route');
 add_action('rest_api_init', 'smms_getlist_route');
 
-function smms_forward_route(){
+function smms_forward_route()
+{
     register_rest_route('smms/api/v2/', 'upload', [
         'methods' => 'POST',
         'callback' => 'smms_forward_callback',
     ]);
 }
 
-function smms_getlist_route(){
+function smms_getlist_route()
+{
     register_rest_route('smms/api/v2/', 'list', [
         'methods' => 'GET',
         'callback' => 'smms_getlist_callback',
@@ -19,7 +21,8 @@ function smms_getlist_route(){
 }
 
 
-function smms_forward_callback($request){
+function smms_forward_callback($request)
+{
     //$paged = $request->get_param('paged');
     global $wpdb;
 
@@ -33,7 +36,7 @@ function smms_forward_callback($request){
     $path = $wp_uploads.'/smms_imglist/'.$_FILES['smfile']['name'];
 
     //return $path;
-    copy($lastname,$path);
+    copy($lastname, $path);
     unlink($lastname);
 
     $option = get_option('SMMS_DATA');
@@ -44,8 +47,7 @@ function smms_forward_callback($request){
 
     $result = $smapi->Upload($path);
     
-    if($result["success"]){
-
+    if ($result["success"]) {
         $data['width']  = $result['data']['width'];
         $data['height'] = $result['data']['height'];
         $data['size']   = $result['data']['size'];
@@ -54,19 +56,18 @@ function smms_forward_callback($request){
 
         $wpdb->insert(MY_NEW_TABLE, $data);
 
-        if($option['Nolocal']){
+        if ($option['Nolocal']) {
             unlink($path);
         }
-        
-    }elseif($result["code"] == "image_repeated"){
+    } elseif ($result["code"] == "image_repeated") {
         $result['data']['url'] = $result["images"];
     }
 
     return $result;
 }
 
-function smms_getlist_callback($request){
-
+function smms_getlist_callback($request)
+{
     global $wpdb;
 
     $pages = $request->get_param('pages');
@@ -79,8 +80,7 @@ function smms_getlist_callback($request){
     return $result;
 }
 
-function create_folders($dir) {
+function create_folders($dir)
+{
     return is_dir($dir) or (create_folders(dirname($dir)) and mkdir($dir, 0777));
 }
-
-?>
